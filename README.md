@@ -1,9 +1,8 @@
-# hawaii-business-insights
 # Hawaii Business Insights
 
 An analysis of Google Maps reviews across Hawaii businesses, 
-exploring whether customer engagement — specifically, how often 
-and how quickly businesses respond to reviews — is associated 
+exploring whether customer engagement, specifically, how often 
+and how quickly businesses respond to reviews, is associated 
 with higher ratings.
 
 This project was completed as part of DSC 80: Practice and 
