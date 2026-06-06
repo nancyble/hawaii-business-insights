@@ -192,7 +192,7 @@ We reject the null hypothesis. The missingness of `avg_response_delay` is **MAR*
 
 **Test statistic:** Difference in mean `latitude` between businesses where `avg_response_delay` is missing vs. not missing.
 
-The observed latitude difference was negligible, and the permutation test p-value was **0.9410**.
+The observed latitude difference was negligible, and the permutation test p-value was **0.9400**.
 
 We fail to reject the null hypothesis. Geographic position within Hawaii (as captured by latitude) has no meaningful relationship to whether a business responds to reviews. This makes sense: being located in northern vs. southern Hawaii does not change whether a business owner is likely to engage with their Google profile. The missingness here is effectively **MCAR with respect to latitude**.
 
@@ -299,7 +299,7 @@ I chose a **Random Forest Regressor** as the final modeling algorithm. Unlike Li
 Before tuning, I identified three hyperparameters most likely to affect model performance:
 
 - **`n_estimators`**: The number of trees in the ensemble. More trees reduce variance at the cost of computation time. I tested [100, 200].
-- **`max_depth`**: How deep each tree is allowed to grow. Deeper trees fit training data more precisely but risk overfitting. I tested [5, 10, None (unlimited)].
+- **`max_depth`**: How deep each tree is allowed to grow. Deeper trees fit training data more precisely but risk overfitting. I tested [5, 10, 20, None (unlimited)].
 - **`min_samples_split`**: The minimum number of samples required to split an internal node. Larger values prevent the model from making very specific rules on small subsets of data. I tested [2, 5].
 
 `GridSearchCV` with 5-fold cross-validation was used to evaluate all combinations. The best configuration found was:
