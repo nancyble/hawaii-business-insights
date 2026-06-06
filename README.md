@@ -1,7 +1,7 @@
 # Hawaii Business Insights
 ### Does Engaging with Customer Reviews Actually Help a Business's Rating?
 
-**by Nancy Le** | DSC 80: Practice and Application of Data Science, UC San Diego
+**by Nancy Le**
 
 ---
 
@@ -32,6 +32,14 @@ The relevant columns used throughout this analysis are:
 | `has_hours` | Nominal | Binary flag: 1 if business hours are listed, 0 otherwise |
 | `has_description` | Nominal | Binary flag: 1 if a business description is present, 0 otherwise |
 
+---
+## Key Findings
+
+> 🔍 **Businesses that respond to reviews have ratings ~0.07 stars higher on average** — statistically significant, but a modest effect.
+>
+> 📊 **A Random Forest model reduced prediction error by 24.5%** over a linear baseline (test RMSE: 0.2649 vs. 0.3510).
+>
+> ⚠️ **The model is significantly less accurate for low-review businesses** — RMSE of 0.33 vs. 0.18 for high-volume businesses.
 ---
 
 ## Data Cleaning and Exploratory Data Analysis
@@ -297,6 +305,20 @@ Before tuning, I identified three hyperparameters most likely to affect model pe
 `GridSearchCV` with 5-fold cross-validation was used to evaluate all combinations. The best configuration found was:
 
 **`max_depth=10`, `min_samples_split=2`, `n_estimators=200`**
+
+<iframe
+  src="assets/actual_vs_predicted.html"
+  width="800"
+  height="500"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/feature_importance.html"
+  width="800"
+  height="500"
+  frameborder="0"
+></iframe>
 
 ### Results
 
